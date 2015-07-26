@@ -17,7 +17,7 @@ XX系统用户操作手册
 3.1  登录
         操作步骤、注意事项等 
 
-![](http://i.imgur.com/FATUTn6.png)
+![](https://github.com/VMPTeam/vmp/blob/master/docs/06UserManual/images/login.png)
 3.2  XX功能
         操作步骤、注意事项等  
 3.3  XX功能
