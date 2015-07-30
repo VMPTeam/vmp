@@ -8,6 +8,8 @@
 
 ![image](https://github.com/VMPTeam/vmp/raw/master/docs/07InstallationDeployment/images/hardware.png)
 
+应用服务部署在应用层ECS中。数据库采用阿里云RDS存储方案。最后由多台ECS提供kafka队列、Redis缓存服务支持。
+
 ## 1.2  软件环境 ##
 
 本项目主要使用以下软件，在使用前请确保可以安装以下软件
@@ -19,14 +21,20 @@
 * 卡夫卡队列
 * Redis缓存
 
+## 1.3 如何获取源代码
+
+源代码使用SVN管理，访问地址为：`http://scm.wantong-tech.net:1080/iov.vmp/`。我们建议从tags文件夹中获取最新的稳定发布版本进行实际发布。
+
+![image](https://github.com/VMPTeam/vmp/raw/master/docs/07InstallationDeployment/images/tags.png)
+
 # 2 安装步骤
+
+为尽量减少安装难度，源代码的main目录下编写了bash脚本以方便用户快速部署。所有的脚本请在main目录下执行。
 
 ## 2.1 基础环境搭建
 
 本项目依赖`tomcat7-admin`环境和`maven`项目管理等软件进行安装部署。可运行main目录下的`base_environment_install.sh`文件进行快速的基础环境搭建。
 基础环境搭建需在所有分布式服务器上运行，以满足项目基础配置需求。
-
-除基础环境外，服务架构中需至少有一台机器运行kafka队列服务，请使用`install_kafka.sh`安装kafka运行环境。若手动安装，请将kafka server接口调整为2188。
 
 ## 2.2 数据库配置
 
@@ -151,11 +159,17 @@
 
 本项目依赖两个后台服务提供OBD服务支持，包括一个OBD信息处理服务和一个数据库维护服务。在完成正式环境部署后，还不能获取OBD的实时信息，此时需部署该后台服务。
 
+除基础环境外，服务架构中需至少有一台机器运行kafka队列服务，请使用`install_kafka.sh`安装kafka运行环境。
+
+若手动安装，请将kafka server接口调整为2188。
+
 在需要部署后台服务的机器上运行`install_backend.sh`文件来部署两个后台服务。该文件依赖obd数据库、卡夫卡服务和Redis服务的正确配置。以本文中的架构为例，该服务可部署在计算ECS中。
 
 ## 2.6 部署结果测试
 
 部署完成后打开配置的服务器的`/Monitor`服务即可看到监控。若所有服务正常启动，则部署已完成。
+
+![image](https://github.com/VMPTeam/vmp/raw/master/docs/07InstallationDeployment/images/monitor.png)
 
 # 3 移动端安装部署
 
