@@ -196,7 +196,7 @@
 
 	![image](https://github.com/VMPTeam/vmp/raw/master/docs/07InstallationDeployment/images/xg_cert.png)
 
-1. 记下所申请的应用access_id，access_key，access_token，并正确配置到应用中。
+1. 记下所申请的应用access\_id，access\_key，access\_token，并正确配置到应用中。
 
 ## 3.2 ionic环境安装
 
