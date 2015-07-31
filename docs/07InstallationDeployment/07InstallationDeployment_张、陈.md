@@ -75,7 +75,7 @@
 
 - 推送服务器
 
-	推送服务器目前与业务服务器合并，不单独作配置
+	推送服务器目前与业务服务器合并，不单独作配置。推送的相关信息，如id,token等请参考3.1信鸽服务申请章节。
 
 -------------------------
 
@@ -127,6 +127,14 @@
 	<jdbc.thirdParty.user>root</jdbc.thirdParty.user>
 	<jdbc.thirdParty.pass>flash</jdbc.thirdParty.pass>
 
+	<!-- ================ 推送服务配置 =================== -->
+	<!-- android -->
+	<android.push.id>2100133203</android.push.id>
+	<android.push.token>b9259d845acf3dbdf41db11e147b55e8</android.push.token>
+	<!-- ios -->
+	<ios.push.id>2200133204</ios.push.id>
+	<ios.push.token>4d362fc85b9c7dda7f189b5b9bd024c7</ios.push.token>
+
 将以上配置修改为对应的配置后，执行`prepare.sh`脚本文件，即可测试部署的正确性，若配置没有错误，即可看到如下输出：
 
 ![image](https://github.com/VMPTeam/vmp/raw/master/docs/07InstallationDeployment/images/succeed.png)
@@ -175,9 +183,20 @@
 
 ## 3.1 信鸽推送服务申请
 
-### 3.1.1 Android应用创建
+1. 在腾讯[http://xg.qq.com](http://xg.qq.com "xg.qq.com")网站申请腾讯开发者账号（qq账号可直接登录）。
+	
+	![image](https://github.com/VMPTeam/vmp/raw/master/docs/07InstallationDeployment/images/xg_login.png)
 
-### 3.1.2 iOS应用创建
+1. 登录后即可创建新的推送应用。其中Android应用需正确填写包名。
+
+	![image](https://github.com/VMPTeam/vmp/raw/master/docs/07InstallationDeployment/images/xg_register.png)
+
+1. 应用成果创建后，iOS需上传开发者证书和实际环境证书。证书制作与上传请参考官方手册：
+[iOS证书制作指南](http://developer.xg.qq.com/index.php/IOS_%E8%AF%81%E4%B9%A6%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97 "iOS证书制作指南")
+
+	![image](https://github.com/VMPTeam/vmp/raw/master/docs/07InstallationDeployment/images/xg_cert.png)
+
+1. 记下所申请的应用access_id，access_key，access_token，并正确配置到应用中。
 
 ## 3.2 ionic环境安装
 
