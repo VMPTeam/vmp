@@ -1,3 +1,5 @@
 ##01SoftwareRequirement
-	ĞèÇóÎÄµµ
-	×´Ì¬£ºÒÑÍê³É
+[01SoftwareRequirement.docx](01SoftwareRequirement_20150601.docx)
+
+	éœ€æ±‚æ–‡æ¡£
+	çŠ¶æ€ï¼šå·²å®Œæˆ
