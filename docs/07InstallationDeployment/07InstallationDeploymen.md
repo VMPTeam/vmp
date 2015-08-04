@@ -33,8 +33,24 @@
 
 ## 2.1 基础环境搭建
 
+- debian系列Linux
+
 本项目依赖`tomcat7-admin`环境和`maven`项目管理等软件进行安装部署。可运行main目录下的`base_environment_install.sh`文件进行快速的基础环境搭建。
 基础环境搭建需在所有分布式服务器上运行，以满足项目基础配置需求。
+
+- 其他操作系统
+
+对不支持一键安装的操作系统，请手动下载相关依赖包进行安装。
+
+名称	|	 URL 	| 安装手册
+---		|	---		|---
+jdk1.7	|			|http://openjdk.java.net/install/
+maven	|http://mirrors.hust.edu.cn/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz			|http://maven.apache.org/install.html
+tomcat7|http://tomcat.apache.org/download-70.cgi | http://tomcat.apache.org/tomcat-7.0-doc/setup.html
+kafka	|https://www.apache.org/dyn/closer.cgi?path=/kafka/0.8.2.1/kafka_2.10-0.8.2.1.tgz | https://kafka.apache.org/documentation.html#quickstart
+redis	|			|http://redis.io/documentation
+
+
 
 ## 2.2 数据库配置
 
@@ -200,15 +216,74 @@
 
 ## 3.2 ionic环境安装
 
+ionic依赖NodeJS环境.请先确保NodeJS环境安装成功.
+[NodeJS安装](https://nodejs.org/download/)
+在命令行输入 `node -v` 显示版本号则安装成功
+安装完NodeJS后,安装ionic命令行工具
+`npm install -g cordova ionic`
+安装成功后,在命令行中查看ionic版本号
+`ionic -v` 显示版本号则安装成功
+### 3.2.1 本地调试
+1. `cd /repo/vmp-app` 进入项目根目录
+2.  `ionic serve` 启动本地服务器
+3.  成功后会自动打开浏览器并访问该网页
 ## 3.3 推送插件安装
+1. 下载推送插件包
+2.  执行命令行安装插件 `ionic plugin add /repo/plugin`
+3.  添加依赖库(张亚提供)
 
 ## 3.4 编译与发布
 
 ### 3.4.1 Android编译环境配置
+安装Android依赖环境
+
+>Windows users developing for Android: You'll want to make sure you have the following installed and set up.
+
+>NOTE: Whenever you make changes to the PATH, or any other environment variable, you'll need to restart or open a new tab in your shell program for the PATH change to take effect.
+
+Java JDK
+
+>Install the most recent Java JDK (NOT just the JRE).
+
+>Next, create an environment variable for JAVA_HOME pointing to the root folder where the Java JDK was installed. So, if you installed the JDK into C:\Program Files\Java\jdk7, set JAVA_HOME to be this path. After that, add the JDK's bin directory to the PATH variable as well. Following the previous assumption, this should be either %JAVA_HOME%\bin or the full path C:\Program Files\Java\jdk7\bin
+
+Apache Ant
+
+>To install Ant, download a zip from here, extract it, move the first folder in the zip to a safe place, and update your PATH to include the bin folder in that folder. For example, if you moved the Ant folder to c:/, you'd want to add this to your PATH: C:\apache-ant-1.9.2\bin.
+
+Android SDK
+
+>Installing the Android SDK is also necessary. The Android SDK provides you the API libraries and developer tools necessary to build, test, and debug apps for Android.
+
+>Cordova requires the ANDROID_HOME environment variable to be set. This should point to the [ANDROID_SDK_DIR]\android-sdk directory (for example c:\android\android-sdk).
+
+>Next, update your PATH to include the tools/ and platform-tools/ folder in that folder. So, using ANDROID_HOME, you would add both %ANDROID_HOME%\tools and %ANDROID_HOME%\platform-tools.
+
+依赖环境安装完后,执行命令行
+`ionic platform add android`
+安装成功后控制台会输出相关信息
+
 
 ### 3.4.2 iOS编译环境配置
+执行命令行
+`ionic platform add ios`
+安装成功后控制台会输出相关信息
 
 ### 3.4.3 应用发布
+#### 3.4.3.1 android应用发布
+执行命令行
+`ionic build android`
+执行成功后会显示apk输出路径
+
+#### 3.4.3.2 ios应用发布
+1. iOS应用发布前需要配置Xcode环境,主要是添加开发者帐号.此处不展开描述.
+2. 环境配置好后,执行命令行
+`ionic build ios`
+执行成功后会显示相关信息.
+3. 双击打开Xcode project,(路径 repo/platform/ios/app-name.xcodeproj)
+4. 执行product -> build
+5. 执行product -> archive
+6. 点击右侧 export,选择发布的帐号,导出ipa包(企业帐号应用发布步骤,其他帐号或有差别)
 
 # 4 常见问题 ##
 
