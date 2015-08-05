@@ -12,7 +12,7 @@
 
 ## 1.2  软件环境 ##
 
-本项目主要使用以下软件，在使用前请确保可以安装以下软件
+本项目主要使用以下软件，在使用前请确保可以安装以下软件。
 
 * tomcat7
 * jdk1.6
@@ -20,6 +20,8 @@
 * MySQL
 * 卡夫卡队列
 * Redis缓存
+
+软件的具体安装方法请参考以下2.1章节。
 
 ## 1.3 如何获取源代码
 
@@ -49,6 +51,7 @@ maven	|http://mirrors.hust.edu.cn/apache/maven/maven-3/3.3.3/binaries/apache-mav
 tomcat7|http://tomcat.apache.org/download-70.cgi | http://tomcat.apache.org/tomcat-7.0-doc/setup.html
 kafka	|https://www.apache.org/dyn/closer.cgi?path=/kafka/0.8.2.1/kafka_2.10-0.8.2.1.tgz | https://kafka.apache.org/documentation.html#quickstart
 redis	|			|http://redis.io/documentation
+MySQL	|			|http://dev.mysql.com/doc/
 
 
 
