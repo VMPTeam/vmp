@@ -230,10 +230,13 @@ ionic依赖NodeJS环境.请先确保NodeJS环境安装成功.
 1. `cd /repo/vmp-app` 进入项目根目录
 2.  `ionic serve` 启动本地服务器
 3.  成功后会自动打开浏览器并访问该网页
+
+
 ## 3.3 推送插件安装
 1. 下载推送插件包
 2.  执行命令行安装插件 `ionic plugin add /repo/plugin`
-3.  添加依赖库(张亚提供)
+3.  添加依赖库
+4.  添加完成后，xcode平台请参考http://developer.xg.qq.com/index.php/IOS_SDK 进行进一步的配置
 
 ## 3.4 编译与发布
 
